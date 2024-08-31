@@ -1,1 +1,18 @@
-create a bar chart or histogram to visualize the distribution of catregorical or continuous variable such as the distribution of ages or genders in a population
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd 
+df=pd.read_csv('/content/gdp.csv')
+df.head()
+n = 5 + np.random.randn(1000)
+m = [m for m in range(len(n))]
+plt.bar(m, n)
+plt.title("Raw Data")
+plt.show()
+
+plt.hist(n, bins=20)
+plt.title("Histogram")
+plt.show()
+
+plt.hist(n, cumulative=True, bins=20)
+plt.title("Cumulative Histogram")
+plt.show()
